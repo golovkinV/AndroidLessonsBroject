@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">AndroidStudy</string>
+    <string name="app_name">Android Study</string>
+    <string name="calc_title">Решение квадратных уравнений</string>
+    <string name="toast_button">Hello, World!</string>
+    <string name="title_hello_world">Вывод всплывающего сообщения</string>
+    <string name="title_input_name">Введите имя</string>
+    <string name="hello_btn">Поприветствовать</string>
+    <string name="calculation">Рассчитать</string>
 </resources>
