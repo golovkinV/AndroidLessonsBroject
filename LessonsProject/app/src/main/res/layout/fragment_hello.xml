@@ -30,13 +30,27 @@ tools:context=".screens.main.MainActivity">
     <ImageButton
         android:id="@+id/calcBtn"
         style="@style/Widget.AppCompat.ActionButton"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_gravity="end"
+        android:scaleType="centerCrop"
         android:layout_marginEnd="15dp"
         android:gravity="center_vertical"
         android:tint="@color/white"
         android:src="@drawable/ic_calculation"/>
+
+    <ImageButton
+        android:id="@+id/quadraticBtn"
+        style="@style/Widget.AppCompat.ActionButton"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="end"
+        android:scaleType="centerCrop"
+        android:layout_marginEnd="15dp"
+        android:gravity="center_vertical"
+        android:tint="@color/white"
+        android:src="@drawable/ic_quadratic"/>
+
 </Toolbar>
 
 

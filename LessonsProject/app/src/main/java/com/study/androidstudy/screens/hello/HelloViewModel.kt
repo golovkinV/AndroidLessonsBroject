@@ -22,7 +22,11 @@ class HelloViewModel(
         }
     }
 
-    fun routeToCalculation() {
+    fun routeToQuadratic() {
         router.navigateTo(Screens.getCalculationScreen())
+    }
+
+    fun routeToCalculation() {
+        router.navigateTo(Screens.getMathCalculationFragment())
     }
 }

@@ -31,6 +31,10 @@ class HelloFragment : BaseFragment() {
             viewModel.showMessage(nameEditText.text.toString())
         }
 
+        quadraticBtn.setOnClickListener {
+            viewModel.routeToQuadratic()
+        }
+
         calcBtn.setOnClickListener {
             viewModel.routeToCalculation()
         }
