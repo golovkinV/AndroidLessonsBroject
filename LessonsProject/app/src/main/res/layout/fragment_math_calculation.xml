@@ -268,7 +268,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button0"
-                android:layout_width="103dp"
+                android:layout_width="91dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textColor="@color/white"

@@ -1,5 +1,6 @@
 package com.study.androidstudy.screens.calculation
 
+import android.text.Editable
 import com.study.androidstudy.R
 import com.study.androidstudy.models.CalculationResult
 import com.study.androidstudy.screens.base.BaseFragment
@@ -24,6 +25,18 @@ class CalculationFragment: BaseFragment() {
     }
 
     override fun setupListeners() {
+
+        cleanBtn.setOnClickListener {
+            listOf(
+                aParamEditText,
+                bParamEditText,
+                cParamEditText
+            ).forEach {
+                it.text?.clear()
+            }
+            aParamEditText.requestFocus()
+        }
+
         with(viewModel) {
             errorHandler.subscribe {
                 showToast(it)
@@ -44,7 +57,7 @@ class CalculationFragment: BaseFragment() {
             val isFilled = params.all { !it.isNullOrEmpty() }
 
             if (isFilled) {
-                hideKeyboard()
+                 hideKeyboard()
                 viewModel.getCalculationResult(
                     params[0]!!.toDouble(),
                     params[1]!!.toDouble(),
