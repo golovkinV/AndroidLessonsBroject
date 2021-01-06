@@ -38,5 +38,9 @@ class HelloFragment : BaseFragment() {
         calcBtn.setOnClickListener {
             viewModel.routeToCalculation()
         }
+
+        timelineBtn.setOnClickListener {
+            viewModel.routeToTimeline()
+        }
     }
 }

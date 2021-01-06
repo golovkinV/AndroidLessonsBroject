@@ -29,4 +29,8 @@ class HelloViewModel(
     fun routeToCalculation() {
         router.navigateTo(Screens.getMathCalculationFragment())
     }
+
+    fun routeToTimeline() {
+        router.navigateTo(Screens.getTimelineFragment())
+    }
 }

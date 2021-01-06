@@ -13,4 +13,8 @@
     <color name="bg_number_btn">#12264C</color>
     <color name="bg_other_btn_action">#3A4B69</color>
     <color name="bg_math_btn">#0B1C3D</color>
+
+    <!--  Timeline  -->
+    <color name="ic_blue">#8EBEF7</color>
+    <color name="timeline_line_new">#D3D3D3</color>
 </resources>
