@@ -16,5 +16,8 @@
 
     <!--  Timeline  -->
     <color name="ic_blue">#8EBEF7</color>
+    <color name="ic_light_blue">#F0F8FF</color>
     <color name="timeline_line_new">#D3D3D3</color>
+    <color name="pass_time">#CD5C5C</color>
+    <color name="done_time">#00FA9A</color>
 </resources>
