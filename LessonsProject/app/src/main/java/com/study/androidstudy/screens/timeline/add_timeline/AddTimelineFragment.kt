@@ -78,6 +78,10 @@ class AddTimelineFragment: AppCompatDialogFragment() {
             dismiss()
         }
 
+        btnClose.setOnClickListener {
+            dismiss()
+        }
+
         titleEditText.addTextChangedListener ( object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {}
 

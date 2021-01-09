@@ -1,19 +1,23 @@
 package com.study.androidstudy.screens.timeline.adapter
 
 import android.annotation.SuppressLint
-import android.graphics.drawable.GradientDrawable
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getColor
 import androidx.recyclerview.widget.RecyclerView
 import com.study.androidstudy.R
 import com.study.androidstudy.screens.timeline.model.TimelineData
+import kotlinx.android.synthetic.main.fragment_detail_timeline.view.*
 import kotlinx.android.synthetic.main.item_timeline.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class TimelineAdapter: RecyclerView.Adapter<TimelineAdapter.ViewHolder>() {
+class TimelineAdapter(
+    private val onClick: (TimelineData) -> Unit
+): RecyclerView.Adapter<TimelineAdapter.ViewHolder>() {
 
     private var items = listOf<TimelineData>()
 
@@ -21,6 +25,10 @@ class TimelineAdapter: RecyclerView.Adapter<TimelineAdapter.ViewHolder>() {
 
         fun bind(item: TimelineData) {
             itemView.apply {
+                cardContainer.setOnClickListener {
+                    onClick(item)
+                }
+
                 titleTextView.text = item.title
                 descTextView.text = item.desc
                 dateTextView.text = item.date.formatMonth()
@@ -32,6 +40,14 @@ class TimelineAdapter: RecyclerView.Adapter<TimelineAdapter.ViewHolder>() {
                 calendar.set(Calendar.MINUTE, 0)
                 calendar.set(Calendar.SECOND, 0)
                 calendar.set(Calendar.MILLISECOND, 0)
+
+                if (item.isDone) {
+                    val color = getColor(context, R.color.timeline_line_new)
+                    titleTextView.setTextColor(color)
+                    titleTextView.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+
+                    descTextView.setTextColor(color)
+                }
 
                 if (item.date < calendar.timeInMillis && !item.isDone) {
                     dateTextView.setTextColor(getColor(context, R.color.pass_time))

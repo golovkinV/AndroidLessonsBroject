@@ -9,6 +9,8 @@ import com.study.androidstudy.screens.math_calculation.MathCalculationViewModel
 import com.study.androidstudy.screens.timeline.TimelineViewModel
 import com.study.androidstudy.screens.timeline.add_timeline.AddTimelineViewModel
 import com.study.androidstudy.screens.timeline.controllers.TimelineController
+import com.study.androidstudy.screens.timeline.detail_timeline.DetailTimelineFragment
+import com.study.androidstudy.screens.timeline.detail_timeline.DetailTimelineViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -27,6 +29,8 @@ val appModule = module {
     viewModel { HelloViewModel(get()) }
     viewModel { CalculationViewModel(get()) }
     viewModel { MathCalculationViewModel(get()) }
-    viewModel { TimelineViewModel(get()) }
+    viewModel { TimelineViewModel(get(), get()) }
     viewModel { AddTimelineViewModel(get()) }
+    viewModel { DetailTimelineViewModel(get(), get()) }
+
 }

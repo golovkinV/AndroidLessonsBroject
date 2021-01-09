@@ -23,7 +23,7 @@
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:textColor="@color/white"
-            android:text="@string/app_name"
+            android:text="Список дел"
             android:textSize="16sp" />
 
         <ImageButton
@@ -41,12 +41,12 @@
         android:id="@+id/timelineRecycler"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:listitem="@layout/item_timeline"
-        tools:itemCount="5"/>
+        tools:itemCount="5"
+        tools:listitem="@layout/item_timeline" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

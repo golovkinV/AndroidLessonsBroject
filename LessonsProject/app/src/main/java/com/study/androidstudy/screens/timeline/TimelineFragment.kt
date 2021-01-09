@@ -1,9 +1,9 @@
 package com.study.androidstudy.screens.timeline
 
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.study.androidstudy.screens.base.BaseFragment
 import com.study.androidstudy.R
-import com.study.androidstudy.screens.hello.HelloViewModel
 import com.study.androidstudy.screens.timeline.adapter.TimelineAdapter
 import com.study.androidstudy.screens.timeline.add_timeline.AddTimelineFragment
 import kotlinx.android.synthetic.main.fragment_timeline.*
@@ -13,7 +13,11 @@ class TimelineFragment : BaseFragment() {
 
     override val layoutResource: Int = R.layout.fragment_timeline
 
-    private val timelineAdapter by lazy { TimelineAdapter() }
+    private val timelineAdapter by lazy {
+        TimelineAdapter {
+            viewModel.openDetailTimeline(it)
+        }
+    }
 
     private val viewModel: TimelineViewModel by viewModel()
 
@@ -37,6 +41,10 @@ class TimelineFragment : BaseFragment() {
             timelineData.subscribe {
                 timelineAdapter.set(it.sortedBy { it.date }.toList())
             }
+
+            toastData.subscribe {
+                Toast.makeText(requireContext(), "Поздравляем! Задача выполнена.", Toast.LENGTH_SHORT).show()
+            }
         }
 
         addTimer.setOnClickListener {
@@ -45,7 +53,5 @@ class TimelineFragment : BaseFragment() {
                 AddTimelineFragment.getInstance().show(manager, "atf")
             }
         }
-
-
     }
 }
