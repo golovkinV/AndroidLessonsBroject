@@ -90,7 +90,7 @@
                 android:layout_marginEnd="16dp"
                 android:backgroundTint="@color/ic_blue"
                 android:inputType="text"
-                android:hint="Введите кратное описание"
+                android:hint="Введите краткое описание"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/desc" />
