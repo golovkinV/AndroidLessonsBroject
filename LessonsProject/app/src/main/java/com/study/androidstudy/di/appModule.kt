@@ -2,6 +2,7 @@ package com.study.androidstudy.di
 
 
 import com.github.terrakok.cicerone.Cicerone
+import com.study.androidstudy.screens.auth.AuthViewModel
 import com.study.androidstudy.screens.calculation.CalculationViewModel
 import com.study.androidstudy.screens.hello.HelloViewModel
 import com.study.androidstudy.screens.main.MainViewModel
@@ -32,5 +33,5 @@ val appModule = module {
     viewModel { TimelineViewModel(get(), get()) }
     viewModel { AddTimelineViewModel(get()) }
     viewModel { DetailTimelineViewModel(get(), get()) }
-
+    viewModel { AuthViewModel(get()) }
 }

@@ -3,7 +3,10 @@ package com.study.androidstudy.screens.math_calculation
 import android.annotation.SuppressLint
 import com.study.androidstudy.screens.base.BaseFragment
 import com.study.androidstudy.R
+import kotlinx.android.synthetic.main.fragment_calculation.*
 import kotlinx.android.synthetic.main.fragment_math_calculation.*
+import kotlinx.android.synthetic.main.fragment_math_calculation.cleanBtn
+import kotlinx.android.synthetic.main.fragment_math_calculation.toolbar
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class MathCalculationFragment: BaseFragment() {
@@ -14,6 +17,14 @@ class MathCalculationFragment: BaseFragment() {
     }
 
     private val viewModel: MathCalculationViewModel by viewModel()
+
+    override fun setupViews() {
+        toolbar.apply {
+            setNavigationOnClickListener { onBackPressed() }
+            setNavigationIcon(R.drawable.ic_back)
+            title = ""
+        }
+    }
 
     @SuppressLint("SetTextI18n")
     override fun setupListeners() {

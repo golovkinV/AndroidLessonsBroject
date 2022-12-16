@@ -9,6 +9,6 @@ class MainViewModel(
 ): BaseViewModel() {
 
     fun create() {
-        router.newRootScreen(Screens.getHelloScreen())
+        router.newRootScreen(Screens.getAuthFragment())
     }
 }
